@@ -8,7 +8,7 @@
     <string name="viewer_bookmark_add">Guardar esta página</string>
     <string name="viewer_bookmark_remove">Quitar marcador</string>
     <string name="viewer_bookmark_page">Página %1$d</string>
-    <string name="app_name">ClearPDF</string>
+    <string name="app_name">PDF simples</string>
 
     <!-- Accesos directos de la app -->
     <string name="shortcut_open_short">Abrir PDF</string>
@@ -21,7 +21,7 @@
     <string name="shortcut_create_long">Crear un PDF nuevo</string>
 
     <!-- Onboarding -->
-    <string name="onboarding_welcome_title">Bienvenido a ClearPDF</string>
+    <string name="onboarding_welcome_title">Bienvenido a PDF simples</string>
     <string name="onboarding_welcome_subtitle">Tu compañero de documentos totalmente sin conexión</string>
     <string name="onboarding_language_title">Elige tu idioma</string>
     <string name="onboarding_language_subtitle">Personaliza tu experiencia</string>
@@ -40,7 +40,7 @@
     <string name="settings_replay_onboarding_desc">Repetir el recorrido de bienvenida</string>
 
     <!-- Pantalla de inicio -->
-    <string name="home_title">ClearPDF</string>
+    <string name="home_title">PDF simples</string>
     <string name="home_workspace_label">ESPACIO DE TRABAJO PDF</string>
     <string name="home_tagline">Trabajo en PDF, con sencilla elegancia.</string>
     <string name="home_subtitle">Abre, escanea y organiza tus archivos &#8212; en privado, en tu dispositivo.</string>
@@ -78,6 +78,10 @@
     <string name="tool_organize_sub">Reordenar y rotar</string>
     <string name="tool_images">Imágenes a PDF</string>
     <string name="tool_images_sub">Fotos a PDF</string>
+    <string name="tool_text_to_pdf">Texto a PDF</string>
+    <string name="tool_text_to_pdf_sub">Crear un PDF a partir de texto</string>
+    <string name="tool_document_scanner">Cámara/Escáner</string>
+    <string name="tool_document_scanner_sub">Escanea documentos con la cámara</string>
     <string name="tool_pdf_to_images">PDF a imágenes</string>
     <string name="tool_pdf_to_images_sub">Exportar páginas como JPG/PNG</string>
     <string name="tool_watermark">Marca de agua</string>
@@ -189,7 +193,7 @@
     <string name="settings_version">Versión 1.1.0</string>
     <string name="settings_made_by">Hecho por Chethan616 con &#10084;</string>
     <string name="settings_star_github">Marcar con estrella en GitHub</string>
-    <string name="settings_open_source">ClearPDF es de código abierto</string>
+    <string name="settings_open_source">PDF simples es de código abierto</string>
     <string name="settings_licenses">Licencias de código abierto</string>
 
     <!-- Visor de PDF -->
@@ -280,7 +284,7 @@
     <string name="feature_tools_title">Herramientas potentes</string>
     <string name="feature_tools_desc">Combina, divide, comprime y convierte</string>
     <string name="onboarding_ready_title">¡Todo listo! &#127881;</string>
-    <string name="onboarding_ready_subtitle">ClearPDF está listo para usarse.\nTodos tus documentos, siempre privados.</string>
+    <string name="onboarding_ready_subtitle">PDF simples está listo para usarse.\nTodos tus documentos, siempre privados.</string>
     <string name="onboarding_privacy_badge">100% sin conexión &#183; Sin recopilación de datos &#183; Código abierto</string>
 
     <!-- Común -->
@@ -303,7 +307,7 @@
     <string name="dont_ask_again">No volver a preguntar</string>
     <string name="settings_custom_directory">Directorio personalizado</string>
     <string name="settings_default_directory">Directorio predeterminado</string>
-    <string name="settings_default_path">Descargas / ClearPDF</string>
+    <string name="settings_default_path">Descargas / PDF simples</string>
     <string name="settings_change_folder">Cambiar carpeta</string>
     <string name="settings_reset">Restablecer</string>
     <string name="settings_bg_gallery">Galería</string>
@@ -500,8 +504,8 @@
     <string name="file_type_powerpoint">PowerPoint</string>
     <string name="file_type_images">Imágenes</string>
     <string name="file_type_txt">TXT</string>
-    <string name="star_prompt_title">Apoya a ClearPDF</string>
-    <string name="star_prompt_message">ClearPDF es de código abierto en GitHub.\n¿Te gustaría darle una estrella al proyecto?</string>
+    <string name="star_prompt_title">Apoya a PDF simples</string>
+    <string name="star_prompt_message">PDF simples es de código abierto en GitHub.\n¿Te gustaría darle una estrella al proyecto?</string>
     <string name="star_prompt_accept">Sí, darle una estrella</string>
     <string name="star_prompt_later">Ahora no</string>
     <string name="star_prompt_never">No volver a preguntar</string>

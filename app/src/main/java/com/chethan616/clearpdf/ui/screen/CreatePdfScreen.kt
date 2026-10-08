@@ -92,9 +92,13 @@ fun CreatePdfScreen(
     backdrop: LayerBackdrop,
     viewModel: CreatePdfViewModel,
     onBack: () -> Unit,
-    onViewOutput: (Uri) -> Unit
+    onViewOutput: (Uri) -> Unit,
+    initialMode: CreateMode? = null
 ) {
     val state by viewModel.uiState.collectAsState()
+    LaunchedEffect(viewModel, initialMode) {
+        initialMode?.let(viewModel::onModeSelected)
+    }
     var showSaveDialog by remember { mutableStateOf(false) }
     val isDarkMode = LocalIsDarkMode.current
     val isLight = !isDarkMode
@@ -184,7 +188,9 @@ fun CreatePdfScreen(
         header = { headerBackdrop ->
             // Fade only — the header is glass, and translating glass re-runs its blur+lens.
             GlassScreenHeaderRow(
-                title = stringResource(R.string.tool_create),
+                title = stringResource(
+                    if (initialMode == CreateMode.ADVANCED_TEXT) R.string.tool_text_to_pdf else R.string.tool_create
+                ),
                 backdrop = headerBackdrop,
                 onBack = onBack,
                 modifier = Modifier.graphicsLayer { alpha = topBarAlpha }

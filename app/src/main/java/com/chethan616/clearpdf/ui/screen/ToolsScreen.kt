@@ -27,23 +27,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.BasicText
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.CallMerge
-import androidx.compose.material.icons.automirrored.rounded.CallSplit
 import androidx.compose.material.icons.automirrored.rounded.NoteAdd
-import androidx.compose.material.icons.rounded.BrandingWatermark
-import androidx.compose.material.icons.rounded.Collections
-import androidx.compose.material.icons.rounded.Compress
-import androidx.compose.material.icons.rounded.ContentCut
-import androidx.compose.material.icons.rounded.EditNote
-import androidx.compose.material.icons.rounded.FileOpen
+import androidx.compose.material.icons.rounded.DocumentScanner
 import androidx.compose.material.icons.rounded.Image
-import androidx.compose.material.icons.rounded.Layers
-import androidx.compose.material.icons.rounded.Lock
-import androidx.compose.material.icons.rounded.LockOpen
-import androidx.compose.material.icons.rounded.Numbers
-import androidx.compose.material.icons.rounded.PhotoSizeSelectLarge
-import androidx.compose.material.icons.rounded.Reorder
-import androidx.compose.material.icons.rounded.TextSnippet
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -89,26 +75,9 @@ private data class ToolSection(val label: String, val tools: List<ToolSpec>)
 @Composable
 fun ToolsScreen(
     backdrop: LayerBackdrop,
-    onNavigateToOpenPdf: () -> Unit,
-    onNavigateToMergePdf: () -> Unit,
-    onNavigateToSplitPdf: () -> Unit,
-    onNavigateToCompressPdf: () -> Unit,
-    onNavigateToCreatePdf: () -> Unit,
-    onNavigateToOrganizePdf: () -> Unit = {},
-    onNavigateToExtractText: () -> Unit = {},
-    onNavigateToImagesToPdf: () -> Unit = {},
-    onNavigateToDecryptPdf: () -> Unit = {},
-    onNavigateToEncryptPdf: () -> Unit = {},
-    onNavigateToPdfToImages: () -> Unit = {},
-    onNavigateToWatermark: () -> Unit = {},
-    onNavigateToExtractPages: () -> Unit = {},
-    onNavigateToPageNumbers: () -> Unit = {},
-    onNavigateToFlatten: () -> Unit = {},
-    onNavigateToImageTools: () -> Unit = {},
-    // Web/HTML to PDF is hidden in the privacy-focused release — its only networked feature is URL
-    // capture. The route and screen are kept; the entry point is simply not listed.
-    @Suppress("UNUSED_PARAMETER") onNavigateToHtmlToPdf: () -> Unit = {},
-    onNavigateToFillForm: () -> Unit = {}
+    onNavigateToTextToPdf: () -> Unit,
+    onNavigateToImagesToPdf: () -> Unit,
+    onNavigateToScan: () -> Unit
 ) {
     val uiSensor = rememberUISensor()
     val isDarkMode = LocalIsDarkMode.current
@@ -117,50 +86,14 @@ fun ToolsScreen(
     var query by remember { mutableStateOf("") }
     var searchActive by remember { mutableStateOf(false) }
 
-    val openPdf = ToolSpec(
-        "open", stringResource(R.string.tool_open_pdf), stringResource(R.string.tool_open_pdf_sub),
-        ToolAccents.Open, Icons.Rounded.FileOpen, onNavigateToOpenPdf
-    )
-
-    // Built fresh each composition on purpose. The previous version memoised this behind a
-    // remember() with 34 dependency keys, which cost more to compare than these 17 small objects
-    // cost to allocate — and invalidated wholesale whenever any single callback changed identity.
     // Accents come from ToolAccents, so each tile matches the colour of the screen it opens.
     val sections = listOf(
         ToolSection(
-            stringResource(R.string.tools_section_organize),
-            listOf(
-                ToolSpec("merge", stringResource(R.string.tool_merge), stringResource(R.string.tool_merge_sub), ToolAccents.Merge, Icons.AutoMirrored.Rounded.CallMerge, onNavigateToMergePdf),
-                ToolSpec("split", stringResource(R.string.tool_split), stringResource(R.string.tool_split_sub), ToolAccents.Split, Icons.AutoMirrored.Rounded.CallSplit, onNavigateToSplitPdf),
-                ToolSpec("organize", stringResource(R.string.tool_organize), stringResource(R.string.tool_organize_sub), ToolAccents.Organize, Icons.Rounded.Reorder, onNavigateToOrganizePdf),
-                ToolSpec("extract_pages", stringResource(R.string.tool_extract_pages), stringResource(R.string.tool_extract_pages_sub), ToolAccents.ExtractPages, Icons.Rounded.ContentCut, onNavigateToExtractPages)
-            )
-        ),
-        ToolSection(
             stringResource(R.string.tools_section_convert),
             listOf(
+                ToolSpec("text", stringResource(R.string.tool_text_to_pdf), stringResource(R.string.tool_text_to_pdf_sub), ToolAccents.Create, Icons.AutoMirrored.Rounded.NoteAdd, onNavigateToTextToPdf),
                 ToolSpec("images", stringResource(R.string.tool_images), stringResource(R.string.tool_images_sub), ToolAccents.ImagesToPdf, Icons.Rounded.Image, onNavigateToImagesToPdf),
-                ToolSpec("pdf_to_images", stringResource(R.string.tool_pdf_to_images), stringResource(R.string.tool_pdf_to_images_sub), ToolAccents.PdfToImages, Icons.Rounded.Collections, onNavigateToPdfToImages),
-                ToolSpec("extract", stringResource(R.string.tool_extract), stringResource(R.string.tool_extract_sub), ToolAccents.ExtractText, Icons.Rounded.TextSnippet, onNavigateToExtractText),
-                ToolSpec("create", stringResource(R.string.tool_create), stringResource(R.string.tool_create_sub), ToolAccents.Create, Icons.AutoMirrored.Rounded.NoteAdd, onNavigateToCreatePdf)
-            )
-        ),
-        ToolSection(
-            stringResource(R.string.tools_section_edit),
-            listOf(
-                ToolSpec("watermark", stringResource(R.string.tool_watermark), stringResource(R.string.tool_watermark_sub), ToolAccents.Watermark, Icons.Rounded.BrandingWatermark, onNavigateToWatermark),
-                ToolSpec("page_numbers", stringResource(R.string.tool_page_numbers), stringResource(R.string.tool_page_numbers_sub), ToolAccents.PageNumbers, Icons.Rounded.Numbers, onNavigateToPageNumbers),
-                ToolSpec("fill_form", stringResource(R.string.tool_fill_form), stringResource(R.string.tool_fill_form_sub), ToolAccents.FillForm, Icons.Rounded.EditNote, onNavigateToFillForm),
-                ToolSpec("image_tools", stringResource(R.string.tool_image_tools), stringResource(R.string.tool_image_tools_sub), ToolAccents.ImageTools, Icons.Rounded.PhotoSizeSelectLarge, onNavigateToImageTools)
-            )
-        ),
-        ToolSection(
-            stringResource(R.string.tools_section_optimize),
-            listOf(
-                ToolSpec("compress", stringResource(R.string.tool_compress), stringResource(R.string.tool_compress_sub), ToolAccents.Compress, Icons.Rounded.Compress, onNavigateToCompressPdf),
-                ToolSpec("flatten", stringResource(R.string.tool_flatten), stringResource(R.string.tool_flatten_sub), ToolAccents.Flatten, Icons.Rounded.Layers, onNavigateToFlatten),
-                ToolSpec("encrypt", stringResource(R.string.tool_encrypt_pdf), stringResource(R.string.tool_encrypt_pdf_sub), ToolAccents.Encrypt, Icons.Rounded.Lock, onNavigateToEncryptPdf),
-                ToolSpec("decrypt", stringResource(R.string.tool_decrypt_pdf), stringResource(R.string.tool_decrypt_pdf_sub), ToolAccents.Decrypt, Icons.Rounded.LockOpen, onNavigateToDecryptPdf)
+                ToolSpec("scanner", stringResource(R.string.tool_document_scanner), stringResource(R.string.tool_document_scanner_sub), ToolAccents.Scan, Icons.Rounded.DocumentScanner, onNavigateToScan)
             )
         )
     )
@@ -174,7 +107,7 @@ fun ToolsScreen(
     val trimmed = query.trim()
     val searching = trimmed.isNotBlank()
     val results = if (!searching) emptyList() else {
-        (listOf(openPdf) + sections.flatMap { it.tools }).filter {
+        sections.flatMap { it.tools }.filter {
             it.title.contains(trimmed, ignoreCase = true) || it.subtitle.contains(trimmed, ignoreCase = true)
         }
     }
@@ -244,10 +177,6 @@ fun ToolsScreen(
                         }
                     }
                 } else {
-                    Box(entrance.tileEntranceModifier(0, density)) {
-                        ToolTileWide(openPdf.title, openPdf.subtitle, openPdf.accent, openPdf.icon, openPdf.onClick)
-                    }
-
                     sections.forEachIndexed { index, section ->
                         // Five stagger slots per section — the label, then its four tiles — so the
                         // whole screen cascades top-to-bottom instead of four sections restarting.

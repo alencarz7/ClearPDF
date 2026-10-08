@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ClearPDF</string>
+    <string name="app_name">PDF simples</string>
 
     <!-- App Shortcuts -->
     <string name="shortcut_open_short">Открыть PDF</string>
@@ -13,7 +13,7 @@
     <string name="shortcut_create_long">Создать новый PDF</string>
 
     <!-- Onboarding -->
-    <string name="onboarding_welcome_title">Добро пожаловать в ClearPDF</string>
+    <string name="onboarding_welcome_title">Добро пожаловать в PDF simples</string>
     <string name="onboarding_welcome_subtitle">Ваш полностью офлайн-помощник для документов</string>
     <string name="onboarding_language_title">Выберите язык</string>
     <string name="onboarding_language_subtitle">Настройте приложение под себя</string>
@@ -42,7 +42,7 @@
     <string name="settings_replay_onboarding_desc">Показать приветственный тур ещё раз</string>
 
     <!-- Home Screen -->
-    <string name="home_title">ClearPDF</string>
+    <string name="home_title">PDF simples</string>
     <string name="home_workspace_label">РАБОЧАЯ ОБЛАСТЬ PDF</string>
     <string name="home_tagline">Работа с PDF — просто и элегантно.</string>
     <string name="home_subtitle">Открывайте, сканируйте и систематизируйте файлы &#8212; приватно, на вашем устройстве.</string>
@@ -80,6 +80,10 @@
     <string name="tool_organize_sub">Порядок &amp; поворот</string>
     <string name="tool_images">Изображения в PDF</string>
     <string name="tool_images_sub">Фото в PDF</string>
+    <string name="tool_text_to_pdf">Текст в PDF</string>
+    <string name="tool_text_to_pdf_sub">Создать PDF из текста</string>
+    <string name="tool_document_scanner">Камера/сканер</string>
+    <string name="tool_document_scanner_sub">Сканируйте документы камерой</string>
     <string name="tool_pdf_to_images">PDF в изображения</string>
     <string name="tool_pdf_to_images_sub">Экспорт страниц в JPG/PNG</string>
     <string name="tool_watermark">Водяной знак</string>
@@ -200,7 +204,7 @@
     <string name="settings_version">Версия 1.1.0</string>
     <string name="settings_made_by">Разработано Chethan616 с &#10084;</string>
     <string name="settings_star_github">Поставить звезду на GitHub</string>
-    <string name="settings_open_source">ClearPDF — проект с открытым исходным кодом</string>
+    <string name="settings_open_source">PDF simples — проект с открытым исходным кодом</string>
     <string name="settings_licenses">Лицензии открытого ПО</string>
 
     <!-- PDF Viewer -->
@@ -300,7 +304,7 @@
     <string name="feature_tools_title">Мощные инструменты</string>
     <string name="feature_tools_desc">Объединяйте, разделяйте, сжимайте и конвертируйте</string>
     <string name="onboarding_ready_title">Всё готово! &#127881;</string>
-    <string name="onboarding_ready_subtitle">ClearPDF готов к работе.\nВсе ваши документы всегда остаются приватными.</string>
+    <string name="onboarding_ready_subtitle">PDF simples готов к работе.\nВсе ваши документы всегда остаются приватными.</string>
     <string name="onboarding_privacy_badge">100% офлайн &#183; Без сбора данных &#183; Открытый код</string>
 
     <!-- Common -->
@@ -323,7 +327,7 @@
     <string name="dont_ask_again">Больше не спрашивать</string>
     <string name="settings_custom_directory">Выбранная папка</string>
     <string name="settings_default_directory">Папка по умолчанию</string>
-    <string name="settings_default_path">Downloads / ClearPDF</string>
+    <string name="settings_default_path">Downloads / PDF simples</string>
     <string name="settings_change_folder">Изменить папку</string>
     <string name="settings_reset">Сбросить</string>
     <string name="settings_bg_gallery">Галерея</string>
@@ -532,8 +536,8 @@
     <string name="file_type_powerpoint">PowerPoint</string>
     <string name="file_type_images">Изображения</string>
     <string name="file_type_txt">TXT</string>
-    <string name="star_prompt_title">Поддержите ClearPDF</string>
-    <string name="star_prompt_message">ClearPDF — проект с открытым исходным кодом на GitHub.\nХотите поставить звезду проекту?</string>
+    <string name="star_prompt_title">Поддержите PDF simples</string>
+    <string name="star_prompt_message">PDF simples — проект с открытым исходным кодом на GitHub.\nХотите поставить звезду проекту?</string>
     <string name="star_prompt_accept">Да, поставить звезду</string>
     <string name="star_prompt_later">Не сейчас</string>
     <string name="star_prompt_never">Больше не спрашивать</string>

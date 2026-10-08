@@ -8,7 +8,7 @@
     <string name="viewer_bookmark_add">Adicionar favorito nesta página</string>
     <string name="viewer_bookmark_remove">Remover favorito</string>
     <string name="viewer_bookmark_page">Página %1$d</string>
-    <string name="app_name">ClearPDF</string>
+    <string name="app_name">PDF simples</string>
 
     <!-- App Shortcuts -->
     <string name="shortcut_open_short">Abrir PDF</string>
@@ -21,7 +21,7 @@
     <string name="shortcut_create_long">Criar um novo PDF</string>
 
     <!-- Onboarding -->
-    <string name="onboarding_welcome_title">Bem-vindo ao ClearPDF</string>
+    <string name="onboarding_welcome_title">Bem-vindo ao PDF simples</string>
     <string name="onboarding_welcome_subtitle">Seu companheiro de documentos totalmente offline</string>
     <string name="onboarding_language_title">Escolha seu idioma</string>
     <string name="onboarding_language_subtitle">Personalize sua experi&#234;ncia</string>
@@ -33,7 +33,7 @@
     <string name="onboarding_features_title">Ferramentas poderosas</string>
     <string name="onboarding_features_subtitle">Anote, assine, pesquise e organize seus documentos</string>
     <string name="onboarding_ready_title">Tudo pronto! &#127881;</string>
-    <string name="onboarding_ready_subtitle">O ClearPDF est&#225; pronto para usar.\nTodos os seus documentos, sempre privados.</string>
+    <string name="onboarding_ready_subtitle">O PDF simples est&#225; pronto para usar.\nTodos os seus documentos, sempre privados.</string>
     <string name="onboarding_privacy_badge">100% offline &#183; Sem coleta de dados &#183; C&#243;digo aberto</string>
     <string name="onboarding_cta_continue">Continuar</string>
     <string name="onboarding_cta_get_started">Come&#231;ar</string>
@@ -43,7 +43,7 @@
     <string name="settings_replay_onboarding_desc">Repetir o tour de boas-vindas</string>
 
     <!-- Home Screen -->
-    <string name="home_title">ClearPDF</string>
+    <string name="home_title">PDF simples</string>
     <string name="home_workspace_label">ESPA&#199;O DE TRABALHO PDF</string>
     <string name="home_tagline">Trabalho com PDF, simplesmente elegante.</string>
     <string name="home_subtitle">Abra, digitalize e organize seus arquivos &#8212; privativamente no seu dispositivo.</string>
@@ -81,6 +81,10 @@
     <string name="tool_organize_sub">Reordenar e girar</string>
     <string name="tool_images">Imagens para PDF</string>
     <string name="tool_images_sub">Fotos para PDF</string>
+    <string name="tool_text_to_pdf">Texto para PDF</string>
+    <string name="tool_text_to_pdf_sub">Crie um PDF a partir de texto</string>
+    <string name="tool_document_scanner">C&#226;mera/Scanner</string>
+    <string name="tool_document_scanner_sub">Digitalize documentos com a c&#226;mera</string>
     <string name="tool_extract">Extrair texto</string>
     <string name="tool_extract_sub">Copiar texto</string>
     <string name="tool_create">Criar PDF</string>
@@ -116,7 +120,7 @@
     <string name="settings_version">Vers&#227;o 1.1.0</string>
     <string name="settings_made_by">Feito por Chethan616 com &#10084;</string>
     <string name="settings_star_github">Favoritar no GitHub</string>
-    <string name="settings_open_source">ClearPDF &#233; c&#243;digo aberto</string>
+    <string name="settings_open_source">PDF simples &#233; c&#243;digo aberto</string>
     <string name="settings_licenses">Licen&#231;as de c&#243;digo aberto</string>
 
     <!-- PDF Viewer -->
@@ -211,7 +215,7 @@
     <string name="dont_ask_again">N&#227;o perguntar novamente</string>
     <string name="settings_custom_directory">Diret&#243;rio personalizado</string>
     <string name="settings_default_directory">Diret&#243;rio padr&#227;o</string>
-    <string name="settings_default_path">Downloads / ClearPDF</string>
+    <string name="settings_default_path">Downloads / PDF simples</string>
     <string name="settings_change_folder">Alterar pasta</string>
     <string name="settings_reset">Redefinir</string>
     <string name="settings_bg_gallery">Galeria</string>
@@ -418,8 +422,8 @@
     <string name="file_type_powerpoint">PowerPoint</string>
     <string name="file_type_images">Imagens</string>
     <string name="file_type_txt">TXT</string>
-    <string name="star_prompt_title">Apoie o ClearPDF</string>
-    <string name="star_prompt_message">O ClearPDF é um projeto de código aberto no GitHub.\nVocê gostaria de favoritar o projeto?</string>
+    <string name="star_prompt_title">Apoie o PDF simples</string>
+    <string name="star_prompt_message">O PDF simples é um projeto de código aberto no GitHub.\nVocê gostaria de favoritar o projeto?</string>
     <string name="star_prompt_accept">Sim, favoritar</string>
     <string name="star_prompt_later">Agora não</string>
     <string name="star_prompt_never">Não perguntar novamente</string>

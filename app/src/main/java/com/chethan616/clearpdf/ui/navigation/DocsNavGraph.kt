@@ -53,6 +53,7 @@ import com.chethan616.clearpdf.ui.screen.ScanDocumentScreen
 import com.chethan616.clearpdf.ui.screen.ToolsScreen
 import com.chethan616.clearpdf.ui.viewmodel.CompressPdfViewModel
 import com.chethan616.clearpdf.ui.viewmodel.CreatePdfViewModel
+import com.chethan616.clearpdf.ui.viewmodel.CreateMode
 import com.chethan616.clearpdf.ui.viewmodel.ExtractTextViewModel
 import com.chethan616.clearpdf.ui.viewmodel.ImagesToPdfViewModel
 import com.chethan616.clearpdf.ui.viewmodel.MergePdfViewModel
@@ -372,24 +373,9 @@ fun DocsNavGraph(
         composable(ROUTE_TOOLS) {
             ToolsScreen(
                 backdrop = backdrop,
-                onNavigateToOpenPdf = { navController.navigateToPdfViewer() },
-                onNavigateToMergePdf = { navController.navigate(ROUTE_MERGE) { launchSingleTop = true } },
-                onNavigateToSplitPdf = { navController.navigate(ROUTE_SPLIT) { launchSingleTop = true } },
-                onNavigateToCompressPdf = { navController.navigate(ROUTE_COMPRESS) { launchSingleTop = true } },
-                onNavigateToCreatePdf = { navController.navigate(ROUTE_CREATE) { launchSingleTop = true } },
-                onNavigateToOrganizePdf = { navController.navigate(ROUTE_ORGANIZE) { launchSingleTop = true } },
-                onNavigateToExtractText = { navController.navigate(ROUTE_EXTRACT_TEXT) { launchSingleTop = true } },
+                onNavigateToTextToPdf = { navController.navigate(ROUTE_CREATE) { launchSingleTop = true } },
                 onNavigateToImagesToPdf = { navController.navigate(ROUTE_IMAGES_TO_PDF) { launchSingleTop = true } },
-                onNavigateToDecryptPdf = { navController.navigate(ROUTE_DECRYPT_PDF) { launchSingleTop = true } },
-                onNavigateToEncryptPdf = { navController.navigate(ROUTE_ENCRYPT_PDF) { launchSingleTop = true } },
-                onNavigateToPdfToImages = { navController.navigate(ROUTE_PDF_TO_IMAGES) { launchSingleTop = true } },
-                onNavigateToWatermark = { navController.navigate(ROUTE_WATERMARK) { launchSingleTop = true } },
-                onNavigateToExtractPages = { navController.navigate(ROUTE_EXTRACT_PAGES) { launchSingleTop = true } },
-                onNavigateToPageNumbers = { navController.navigate(ROUTE_PAGE_NUMBERS) { launchSingleTop = true } },
-                onNavigateToFlatten = { navController.navigate(ROUTE_FLATTEN) { launchSingleTop = true } },
-                onNavigateToImageTools = { navController.navigate(ROUTE_IMAGE_TOOLS) { launchSingleTop = true } },
-                onNavigateToHtmlToPdf = { navController.navigate(ROUTE_HTML_TO_PDF) { launchSingleTop = true } },
-                onNavigateToFillForm = { navController.navigate(ROUTE_FILL_FORM) { launchSingleTop = true } }
+                onNavigateToScan = { navController.navigate(ROUTE_SCAN) { launchSingleTop = true } }
             )
         }
 
@@ -638,7 +624,8 @@ fun DocsNavGraph(
                 backdrop = backdrop,
                 viewModel = vm,
                 onBack = { navController.popBackStack() },
-                onViewOutput = { uri -> navController.navigateToPdfViewer(uri) }
+                onViewOutput = { uri -> navController.navigateToPdfViewer(uri) },
+                initialMode = CreateMode.ADVANCED_TEXT
             )
         }
 
